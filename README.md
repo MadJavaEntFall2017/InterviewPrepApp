@@ -16,33 +16,16 @@ ________________________________________________________________________________
 
 ### Application Flow
 
-![Application Flow](https://github.com/ngrant1/RepertoireManager/blob/master/DesignDocuments/ApplicationFlow.PNG)
+![Application Flow]()
 
 _________________________________________________________________________________________________________________
 
-### Home
+### Flashcard Mockup
 
-![Home Page](https://github.com/ngrant1/RepertoireManager/blob/master/DesignDocuments/wireframes/Home.PNG)
-
-_________________________________________________________________________________________________________________
-
-### Browse Music
-
-![Browse Music](https://github.com/ngrant1/RepertoireManager/blob/master/DesignDocuments/wireframes/BrowseSongs.PNG)
+![Home Page](https://github.com/MadJavaEntFall2017/InterviewPrepApp/blob/master/DesignDocuments/Screenshot%20from%202017-10-25%2016-41-31.png)
 
 _________________________________________________________________________________________________________________
 
-### View/Add Song
-
-![View/Add Song](https://github.com/ngrant1/RepertoireManager/blob/master/DesignDocuments/wireframes/ViewAddSong.PNG)
-
-_________________________________________________________________________________________________________________
-
-### Song Page Mockup - (Rough Draft)
-
-![Song Page](https://github.com/ngrant1/RepertoireManager/blob/master/images/rough_draft.PNG)
-
-_________________________________________________________________________________________________________________
 
 
 
@@ -57,29 +40,13 @@ ________________________________________________________________________________
 
   * User role: submit score peices, score edits, and events/alerts. 
 
-  * All: Anyone can browse repertoire and view events on site.
 
 * Database (MySQL and Hibernate)
   * users/roles/DAOs
 
-  * music 
-
-  * events
 
 
 * Web Services or APIs
-
-  *** alphaTab (https://www.alphatab.net/)***
-
-  * Spotify..?
-
-  * Java messaging service?
-
-  * Java sound technology
-
-  * Google Maps for event locations
-
-  * Music recognition software or JFugue? (independent research topic)
 
   * Logging
 
@@ -93,11 +60,11 @@ ________________________________________________________________________________
 
 ### Design
 
-* [Screen Design](DesignDocuments/Screens.md)
-* [Application Flow](DesignDocuments/applicationFlow.md)
-* [Database Design](DesignDocuments/databaseDiagram.png)
+* [Screen Design]()
+* [Application Flow]()
+* [Database Design]()
 
-### [Project Plan](ProjectPlan.md)
+### [Project Plan]()
 
-### [Time Log](TimeLog.md) 
-### [Journal](Journal.md)
+### [Time Log]() 
+### [Journal]()
