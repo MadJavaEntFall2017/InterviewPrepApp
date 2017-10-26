@@ -8,7 +8,7 @@ Problem -
 IT students often come to interviews unprepared. This application will help prepare students in the IT field.
 Interview Prep App will...
 
-- Provide categorized prep cards 
+- Provide categorized prep cards for different skillsets
 - 
 
 Wireframes:
@@ -26,6 +26,9 @@ ________________________________________________________________________________
 
 _________________________________________________________________________________________________________________
 
+
+### Database Design
+![Database Design]()
 
 
 
