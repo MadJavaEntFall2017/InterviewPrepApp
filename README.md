@@ -28,7 +28,7 @@ ________________________________________________________________________________
 
 
 ### Database Design
-![Database Design]()
+![Database Design](https://github.com/MadJavaEntFall2017/InterviewPrepApp/blob/master/DesignDocuments/database.png)
 
 
 
