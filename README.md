@@ -1,5 +1,5 @@
 # InterviewPrepApp
-# John Spink, Natasha Grant, Heather? Team project
+# John Spink, Natasha Grant, Heather Entwistle Team project
 
 Interview Prep App
 
@@ -8,7 +8,7 @@ Problem -
 IT students often come to interviews unprepared. This application will help prepare students in the IT field.
 Interview Prep App will...
 
-- Provide categorized prep cards 
+- Provide categorized prep cards for different skillsets
 - 
 
 Wireframes:
@@ -27,6 +27,9 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________
 
 
+### Database Design
+![Database Design](https://github.com/MadJavaEntFall2017/InterviewPrepApp/blob/master/DesignDocuments/database.png)
+
 
 
 
@@ -39,7 +42,7 @@ ________________________________________________________________________________
   * Admin role: create/read/update/delete (crud) of all data
 
   * User role: submit score peices, score edits, and events/alerts. 
-
+    
 
 * Database (MySQL and Hibernate)
   * users/roles/DAOs
