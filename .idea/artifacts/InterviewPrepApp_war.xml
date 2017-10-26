@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="InterviewPrepApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="interviewPrepApp.war">
+      <element id="artifact" artifact-name="InterviewPrepApp:war exploded" />
+    </root>
+  </artifact>
+</component>
