@@ -1,5 +1,5 @@
 # InterviewPrepApp
-# John Spink, Natasha Grant, Heather? Team project
+# John Spink, Natasha Grant, Heather Entwistle Team project
 
 Interview Prep App
 
@@ -39,7 +39,7 @@ ________________________________________________________________________________
   * Admin role: create/read/update/delete (crud) of all data
 
   * User role: submit score peices, score edits, and events/alerts. 
-
+    
 
 * Database (MySQL and Hibernate)
   * users/roles/DAOs
