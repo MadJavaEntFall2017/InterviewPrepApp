@@ -1,4 +1,4 @@
-package matc.controller;
+package edu.matc.controller;
 
 import edu.matc.persistence.UserDao;
 import org.apache.log4j.Logger;

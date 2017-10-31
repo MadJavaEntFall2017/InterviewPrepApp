@@ -1,4 +1,4 @@
-package matc.entity;
+package edu.matc.entity;
 
 public class Category {
 }

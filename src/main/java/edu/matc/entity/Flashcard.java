@@ -1,4 +1,5 @@
-package matc.entity;
+package edu.matc.entity;
+
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -16,17 +17,14 @@ import javax.persistence.*;
 //TODO Add hibernate annotations to allow mapping from your table to the entity
 // Note: a LocalDate converter has been provided in the util package in case you need it
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "flashcard")
+public class Flashcard {
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name="question")
+    private String question;
 
-    @Column(name="last_name")
-    private String lastName;
-
-    @Column(name="email")
-    private String emailAddress;
+    @Column(name="answer")
+    private String answer;
 
     @Column(name="instrument")
     private String instrument;
@@ -34,15 +32,21 @@ public class User {
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
-    @Column(name = "id")
-    private int userid;
+    @Column(name = "flashcardId")
+    private int flashcardID;
+
+    @OnetoMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "categoryId")
+    public Category getCategory() {
+        return category;
+    }
 
 
 
     /**
      * Instantiates a new User.
      */
-    public User() {
+    public Flashcard() {
     }
 
     /**
@@ -54,29 +58,24 @@ public class User {
      * @param emailAddress the user email address
      * @param instrument  the user instrument
      */
-    public User(String firstName, String lastName, String emailAddress, String instrument, int userid) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-        this.instrument = instrument;
-        this.userid = userid;
+    public Flashcard( String question, String answer, int categoryID, int flashcardID) {
 
 
     }
-
+/**
     /**
      * Calculate age int.
      *
      * @return the int
      */
 /**    public int calculateAge() {
-        if (dateOfBirth != null) {
-            return Period.between(dateOfBirth, now()).getYears();
-        } else {
-            return 0;
-        }
+ if (dateOfBirth != null) {
+ return Period.between(dateOfBirth, now()).getYears();
+ } else {
+ return 0;
+ }
 
-    }**/
+ }**/
 
     /**
      * Gets instrument
@@ -99,7 +98,7 @@ public class User {
      * @return the email address
      */
     public String getEmailAddress() {
-         return emailAddress;
+        return emailAddress;
     }
 
     /**
@@ -176,3 +175,4 @@ public class User {
                 '}';
     }
 }
+

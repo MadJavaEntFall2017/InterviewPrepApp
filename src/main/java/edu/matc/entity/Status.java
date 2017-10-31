@@ -1,4 +1,4 @@
-package matc.entity;
+package edu.matc.entity;
 
 /**
  * Created on 11/13/16.

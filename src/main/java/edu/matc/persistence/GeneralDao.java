@@ -1,4 +1,4 @@
-package matc.persistence;
+package edu.matc.persistence;
 
 import edu.matc.entity.User;
 import org.apache.log4j.Logger;
