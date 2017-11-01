@@ -1,7 +1,8 @@
 package edu.matc.persistence;
 
-import edu.matc.entity.Category;
-import edu.matc.entity.Flashcard;
+
+import edu.matc.entity.Job;
+
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -21,13 +22,13 @@ public class GeneralDao {
      *
      * @return All categories
      */
-    public List<Category> getAllCategories() {
-        List<Category> categories = new ArrayList<Category>();
+    public List<Job> getAllJobs() {
+        List<Job> jobs = new ArrayList<Job>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        categories = session.createCriteria(Category.class).list();
-        return categories;
+        jobs = session.createCriteria(Job.class).list();
+        return jobs;
     }
-    
+
 
     /**
      * retrieve a user given their id
@@ -35,12 +36,12 @@ public class GeneralDao {
      * @param id the user's id
      * @return user
      */
-/**    public User getUser(int id) {
-        User user = null;
+    public Job getJob(int id) {
+        Job job = null;
         Session session = null;
         try {
             session = SessionFactoryProvider.getSessionFactory().openSession();
-            user = (User) session.get(User.class, id);
+            job = (Job) session.get(Job.class, id);
         } catch (HibernateException hibernateException) {
             log.error("Error retrieving user with id: " + id, hibernateException);
         } finally {
@@ -48,9 +49,9 @@ public class GeneralDao {
                 session.close();
             }
         }
-        return user;
+        return job;
     }
-*/
+
     /**
      * add a user
      *

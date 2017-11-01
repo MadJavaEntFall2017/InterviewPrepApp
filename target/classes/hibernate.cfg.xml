@@ -23,8 +23,9 @@
         <property name="useSSL">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="edu.matc.entity.Category"/>
-        <mapping class="edu.matc.entity.Flashcard"/>
+      <!--  <mapping class="edu.matc.entity.Category"/>
+        <mapping class="edu.matc.entity.Flashcard"/> -->
+        <mapping class="edu.matc.entity.Job"/>
 
     </session-factory>
 

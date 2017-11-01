@@ -14,16 +14,11 @@ import static java.time.LocalDate.now;
 
 
 /**
- * A class to represent a user.
+ * A class to represent a category.
  *
  * @author Natasha Grant
  */
 
-
-//TODO create the user entity to represent a user in your user table.
-//TODO Remember to include a no argument constructor and publice getters and setters
-//TODO Add hibernate annotations to allow mapping from your table to the entity
-// Note: a LocalDate converter has been provided in the util package in case you need it
 @Entity
 @Table(name = "category")
 public class Category {
@@ -39,13 +34,13 @@ public class Category {
     private int categoryID;
 
  //   @ElementCollection(targetClass = Flashcard.class)
-    private List<Flashcard> flashcards;
+//    private List<Flashcard> flashcards;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+/**    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     public List<Flashcard> getFlashcards() {
         return flashcards;
     }
-
+*/
 
 
     /**

@@ -1,6 +1,9 @@
 package edu.matc.persistence;
 
-import edu.matc.entity.Category;
+
+import edu.matc.entity.Job;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,67 +16,30 @@ import static org.junit.Assert.*;
 public class GeneralDaoTest {
 
     GeneralDao dao;
-    int initialRecordAmount;
+    int initialJobRecordAmount;
 
     @Before
     public void setup() {
         dao = new GeneralDao();
-        initialRecordAmount = dao.getAllCategories().size();
+        initialJobRecordAmount = dao.getAllJobs().size();
     }
 
    @Test
-    public void getAllCategories() throws Exception {
-        List<Category> categories = dao.getAllCategories();
-        assertTrue(categories.size() > 0);
+    public void getAllJobs() throws Exception {
+        List<Job> jobs = dao.getAllJobs();
+        assertTrue(jobs.size() > 0);
     }
-/**
- @Test
-    public void getUser() throws Exception {
-        User user = dao.getUser(3);
-        assertTrue(user.getUserid() == 3);
-    }
-**/
- /**   @Test
-    public void addUser() throws Exception {
-        User user = new User();
-        user.setFirstName("Mark");
-        user.setLastName("Grant");
-        user.setEmailAddress("mark.grant@CDW.com");
-        user.setInstrument("Triangle");
-        int userID = dao.addUser(user);
 
-        assertTrue(user.getUserid() == 3);
-    } */
-
- /**   @Test
-    public void deleteUser() throws Exception {
-        User user = dao.getUser(2);
-        dao.deleteUser(2);
-        List<User> users = dao.getAllUsers();
-
-        assertFalse(users.contains(user));
-    }
 
     @Test
-    public void updateUser() throws Exception {
-        User user = dao.getUser(3);
-        String newFirstName = "Bob";
-        String newLastName = "Smith";
-        String newEmail = "bob.smith@charter.net";
-        String newInstrument = "French Horn";
+    public void getJob() throws Exception {
+        Job job = dao.getJob(3);
+        assertTrue(job.getJobID() == 3);
+    }
 
-        user.setFirstName(newFirstName);
-        user.setLastName(newLastName);
-        user.setEmailAddress(newEmail);
-        user.setInstrument(newInstrument);
 
-        dao.updateUser(user);
 
-        assertTrue(dao.getUser(3).getFirstName().equals(newFirstName));
-        assertTrue(dao.getUser(3).getLastName().equals(newLastName));
-        assertTrue(dao.getUser(3).getEmailAddress().equals(newEmail));
-        assertTrue(dao.getUser(3).getInstrument().equals(newInstrument));
 
-    } **/
+
 
 }
