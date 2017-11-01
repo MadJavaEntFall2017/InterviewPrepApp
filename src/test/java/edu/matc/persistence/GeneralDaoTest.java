@@ -18,6 +18,7 @@ public class GeneralDaoTest {
     GeneralDao dao;
     int initialJobRecordAmount;
     int initialCategoryRecordAmount;
+    int initialFlashcardRecordAmount;
 
     @Before
     public void setup() {
@@ -37,12 +38,25 @@ public class GeneralDaoTest {
         assertTrue(categories.size() > 0);
     }
 
+    @Test
+    public void getAllFlashcards() throws Exception {
+        List<Flashcard> flashcards = dao.getAllFlashcards();
+        assertTrue(flashcards.size() > 0);
+    }
+
 
     @Test
     public void getJob() throws Exception {
         Job job = dao.getJob(3);
         assertTrue(job.getJobID() == 3);
     }
+
+    @Test
+    public void getCategory() throws Exception {
+        Category category = dao.getCategory(3);
+        assertTrue(category.getCategoryID() == 3);
+    }
+
 /**    @Test
     public void addJob() throws Exception {
         Job job = new Job();
@@ -62,18 +76,16 @@ public class GeneralDaoTest {
         assertFalse(jobs.contains(jobs));
     }
 
-    @Test
-    public void updateJob() throws Exception {
-        Job job = dao.getJob(3);
-        String newJobName= "IT Help Desk";
+/**    @Test
+    public void deleteCategory() throws Exception {
+        Category category = dao.getCategory(6);
+        dao.deleteCategory(6);
+        List<Category> category = dao.getAllCategories();
 
-        job.setJobName(newJobName);
-
-        dao.updateUser(job);
-
-        assertTrue(dao.getJob(3).getJobName().equals(newJobName));
-
+        assertFalse(category.contains(category));
     }
+*/
+
 
 
 

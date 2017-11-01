@@ -1,12 +1,14 @@
 package edu.matc.entity;
 
-
-//import edu.matc.util.LocalDateAttributeConverter;
+import javax.persistence.CascadeType;
+import edu.matc.entity.Category;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.mapping.Set;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 import static java.time.LocalDate.now;
 
@@ -36,13 +38,23 @@ public class Flashcard {
 
 
     private Category category;
-
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "categoryId")
     public Category getCategory() {
         return category;
     }
-    private int categoryID;
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+
+/**    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    public Category getCategory() {
+        return category;
+    }
+*/
 
 
 
@@ -58,13 +70,13 @@ public class Flashcard {
      * @param flashcardID   the flashcard id
      * @param question    the question
      * @param answer      the answer
-     * @param categoryID the categoryID
+     * @param category the categoryID
      */
-    public Flashcard(int flashcardID, String question, String answer, int categoryID) {
+    public Flashcard(int flashcardID, String question, String answer, Category category) {
         this.flashcardID = flashcardID;
         this.question = question;
         this.answer = answer;
-        this.categoryID = categoryID;
+        this.category = category;
 
     }
 
@@ -124,7 +136,7 @@ public class Flashcard {
                 "answer='" + answer + '\'' +
                 ", question='" + question + '\'' +
                 ", flashcardID='" + flashcardID + '\'' +
-                ", categoryID='" + categoryID + '\'' +
+                ", categoryID='" + category + '\'' +
                 '}';
     }
 }

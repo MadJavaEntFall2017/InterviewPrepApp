@@ -44,6 +44,17 @@ public class GeneralDao {
         return categories;
     }
 
+    /** Return a list of all flashcards
+     *
+     * @return All flashcards
+     */
+    public List<Flashcard> getAllFlashcards() {
+        List<Flashcard> flashcards = new ArrayList<Flashcard>();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        flashcards = session.createCriteria(Flashcard.class).list();
+        return flashcards;
+    }
+
     /**
      * retrieve a job given their id
      *
@@ -64,6 +75,27 @@ public class GeneralDao {
             }
         }
         return job;
+    }
+    /**
+     * retrieve a category given id
+     *
+     * @param id the category id
+     * @return category
+     */
+    public Category getCategory(int id) {
+        Category category = null;
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            category = (Category) session.get(Category.class, id);
+        } catch (HibernateException hibernateException) {
+            log.error("Error retrieving category with id: " + id, hibernateException);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return category;
     }
 
     /**
@@ -114,7 +146,7 @@ public class GeneralDao {
                 try {
                     transaction.rollback();
                 } catch (HibernateException hibernateException2) {
-                    log.error("Error rolling back delete of user id: " + id, hibernateException2);
+                    log.error("Error rolling back delete of job id: " + id, hibernateException2);
                 }
             }
         } finally {
@@ -124,6 +156,35 @@ public class GeneralDao {
         }
 
     }
+
+    public void deleteCategory(int id) {
+
+        Category category = new Category();
+        category.setCategoryID(id);
+
+        Transaction transaction = null;
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            session.delete(category);
+            transaction.commit();
+        } catch (HibernateException hibernateException1){
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (HibernateException hibernateException2) {
+                    log.error("Error rolling back delete of category id: " + id, hibernateException2);
+                }
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+    }
+
 
     /**
      * Update the job
