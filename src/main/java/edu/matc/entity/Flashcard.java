@@ -1,9 +1,15 @@
 package edu.matc.entity;
 
 
+import edu.matc.util.LocalDateAttributeConverter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.Period;
+
+import static java.time.LocalDate.now;
+
 
 /**
  * A class to represent a user.
