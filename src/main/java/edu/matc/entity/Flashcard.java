@@ -1,5 +1,8 @@
 package edu.matc.entity;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import javax.persistence.CascadeType;
 import edu.matc.entity.Category;
 import org.hibernate.annotations.GenericGenerator;
@@ -138,6 +141,14 @@ public class Flashcard {
                 ", flashcardID='" + flashcardID + '\'' +
                 ", categoryID='" + category + '\'' +
                 '}';
+    }
+
+    /**
+     * This method will
+     */
+    public void generateFlashCard(){
+
+
     }
 }
 
