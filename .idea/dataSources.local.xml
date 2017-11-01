@@ -7,8 +7,6 @@
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>tomcat</user-name>
       <introspection-schemas>*:interviewdb</introspection-schemas>
     </data-source>
     <data-source name="interviewdb@localhost [2]" uuid="88099d98-7e7f-4555-bf90-b065218da963">
