@@ -1,6 +1,7 @@
 package edu.matc.persistence;
 
-import edu.matc.entity.User;
+import edu.matc.entity.Category;
+import edu.matc.entity.Flashcard;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -16,16 +17,17 @@ public class GeneralDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    /** Return a list of all users
+    /** Return a list of all categories
      *
-     * @return All users
+     * @return All categories
      */
-    public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
+    public List<Category> getAllCategories() {
+        List<Category> categories = new ArrayList<Category>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        users = session.createCriteria(User.class).list();
-        return users;
+        categories = session.createCriteria(Category.class).list();
+        return categories;
     }
+    
 
     /**
      * retrieve a user given their id
@@ -33,7 +35,7 @@ public class GeneralDao {
      * @param id the user's id
      * @return user
      */
-    public User getUser(int id) {
+/**    public User getUser(int id) {
         User user = null;
         Session session = null;
         try {
@@ -48,14 +50,14 @@ public class GeneralDao {
         }
         return user;
     }
-
+*/
     /**
      * add a user
      *
      * @param user
      * @return the id of the inserted record
      */
-    public int addUser(User user) {
+/**    public int addUser(User user) {
         int id = 0;
         Transaction transaction = null;
         Session session = null;
@@ -107,13 +109,13 @@ public class GeneralDao {
         }
 
     }
-
+*/
     /**
      * Update the user
      * @param user
      */
 
-    public void updateUser(User user) {
+/**    public void updateUser(User user) {
         Transaction transaction = null;
         Session session = null;
         try {
@@ -136,6 +138,6 @@ public class GeneralDao {
         }
     }
 
-
+*/
 
 }

@@ -1,7 +1,7 @@
 package edu.matc.entity;
 
 
-import edu.matc.util.LocalDateAttributeConverter;
+//import edu.matc.util.LocalDateAttributeConverter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -32,20 +32,21 @@ public class Flashcard {
     @Column(name="answer")
     private String answer;
 
-    @Column(name="instrument")
-    private String instrument;
-
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     @Column(name = "flashcardId")
     private int flashcardID;
 
-    @OnetoMany(cascade = CascadeType.ALL)
+
+    private Category category;
+
+    @ManyToOne
     @JoinColumn(name = "categoryId")
     public Category getCategory() {
         return category;
     }
+    private int categoryID;
 
 
 
@@ -58,126 +59,76 @@ public class Flashcard {
     /**
      * Instantiates a new User.
      *
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param userid      the userid
-     * @param emailAddress the user email address
-     * @param instrument  the user instrument
+     * @param flashcardID   the flashcard id
+     * @param question    the question
+     * @param answer      the answer
+     * @param categoryID the categoryID
      */
-    public Flashcard( String question, String answer, int categoryID, int flashcardID) {
-
+    public Flashcard(int flashcardID, String question, String answer, int categoryID) {
+        this.flashcardID = flashcardID;
+        this.question = question;
+        this.answer = answer;
+        this.categoryID = categoryID;
 
     }
-/**
+
     /**
-     * Calculate age int.
+     * Gets the question
+     * @return the question
+     */
+    public String getQuestion() {
+        return question;
+    }
+
+    /**
+     * Sets the question
+     * @param question
+     */
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    /**
+     * Gets the answer
+     * @return the answer
+     */
+    public String getAnswer() {
+        return answer;
+    }
+
+    /**
+     * Sets the answer
+     * @param answer
+     */
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+    /**
+     * Gets flashcardID.
      *
-     * @return the int
+     * @return the flashcardID
      */
-/**    public int calculateAge() {
- if (dateOfBirth != null) {
- return Period.between(dateOfBirth, now()).getYears();
- } else {
- return 0;
- }
-
- }**/
-
-    /**
-     * Gets instrument
-     * @return the instrument
-     */
-    public String getInstrument() {
-        return instrument;
+    public int getFlashcardID() {
+        return flashcardID;
     }
 
     /**
-     * Sets the instrument
-     * @param instrument
-     */
-    public void setInstrument(String instrument) {
-        this.instrument = instrument;
-    }
-
-    /**
-     * Gets the email address
-     * @return the email address
-     */
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    /**
-     * Sets the email address
-     * @param emailAddress
-     */
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    /**
-     * Gets first name.
+     * Sets flashcardID.
      *
-     * @return the first name
+     * @param flashcardID
      */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * Gets last name.
-     *
-     * @return the last name
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * Gets userid.
-     *
-     * @return the userid
-     */
-    public int getUserid() {
-        return userid;
-    }
-
-    /**
-     * Sets userid.
-     *
-     * @param userid the userid
-     */
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setFlashcardID(int flashcardID) {
+        this.flashcardID = flashcardID;
     }
 
 
     @Override
     public String toString() {
-        return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", instrument='" + instrument + '\'' +
-                ", userid=" + userid +
+        return "Flashcard{" +
+                "answer='" + answer + '\'' +
+                ", question='" + question + '\'' +
+                ", flashcardID='" + flashcardID + '\'' +
+                ", categoryID='" + categoryID + '\'' +
                 '}';
     }
 }

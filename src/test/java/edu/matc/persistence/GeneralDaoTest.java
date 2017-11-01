@@ -1,6 +1,6 @@
 package edu.matc.persistence;
 
-import edu.matc.entity.User;
+import edu.matc.entity.Category;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,21 +18,21 @@ public class GeneralDaoTest {
     @Before
     public void setup() {
         dao = new GeneralDao();
-        initialRecordAmount = dao.getAllUsers().size();
+        initialRecordAmount = dao.getAllCategories().size();
     }
 
-    @Test
-    public void getAllUsers() throws Exception {
-        List<User> users = dao.getAllUsers();
-        assertTrue(users.size() > 0);
+   @Test
+    public void getAllCategories() throws Exception {
+        List<Category> categories = dao.getAllCategories();
+        assertTrue(categories.size() > 0);
     }
-
-    @Test
+/**
+ @Test
     public void getUser() throws Exception {
         User user = dao.getUser(3);
         assertTrue(user.getUserid() == 3);
     }
-
+**/
  /**   @Test
     public void addUser() throws Exception {
         User user = new User();
@@ -45,7 +45,7 @@ public class GeneralDaoTest {
         assertTrue(user.getUserid() == 3);
     } */
 
-    @Test
+ /**   @Test
     public void deleteUser() throws Exception {
         User user = dao.getUser(2);
         dao.deleteUser(2);
@@ -74,6 +74,6 @@ public class GeneralDaoTest {
         assertTrue(dao.getUser(3).getEmailAddress().equals(newEmail));
         assertTrue(dao.getUser(3).getInstrument().equals(newInstrument));
 
-    }
+    } **/
 
 }
