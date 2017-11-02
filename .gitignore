@@ -36,4 +36,4 @@ fabric.properties
 /src/main/resources/database.properties
 /src/main/resources/hibernate.cfg.xml
 target/
-.idea/
+.idea
