@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a83a775c-72cb-4bab-9450-212175f29019" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/InterviewPrepApp.iml" afterPath="$PROJECT_DIR$/.idea/InterviewPrepApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/entity/Category.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/entity/Flashcard.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/Flashcard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/persistence/GeneralDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/persistence/GeneralDao.java" />
+    <list default="true" id="a83a775c-72cb-4bab-9450-212175f29019" name="Default" comment="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;target/classes/edu/matc/entity/Flashcard.class&#10;#&#9;target/classes/hibernate.cfg.xml">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/database.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/matc/entity/Flashcard.class" afterPath="$PROJECT_DIR$/target/classes/edu/matc/entity/Flashcard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -151,8 +150,8 @@
       <file leaf-file-name="GeneralDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/persistence/GeneralDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="216" column="3" lean-forward="false" selection-start-line="216" selection-start-column="3" selection-end-line="216" selection-end-column="3" />
+            <state relative-caret-position="134">
+              <caret line="190" column="44" lean-forward="true" selection-start-line="190" selection-start-column="44" selection-end-line="190" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#988#998#0" expanded="true" />
@@ -761,7 +760,7 @@
       <workItem from="1509482356175" duration="606000" />
       <workItem from="1509483861920" duration="3177000" />
       <workItem from="1509551265969" duration="14398000" />
-      <workItem from="1509577921196" duration="3816000" />
+      <workItem from="1509577921196" duration="4165000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1508983428605</created>
@@ -813,7 +812,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31504000" />
+    <option name="totallyTimeSpent" value="31853000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -900,7 +899,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge" />
     <MESSAGE value="Added Restful dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Restful dependency" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;target/classes/edu/matc/entity/Flashcard.class&#10;#&#9;target/classes/hibernate.cfg.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;target/classes/edu/matc/entity/Flashcard.class&#10;#&#9;target/classes/hibernate.cfg.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1225,8 +1225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/persistence/GeneralDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="216" column="3" lean-forward="false" selection-start-line="216" selection-start-column="3" selection-end-line="216" selection-end-column="3" />
+        <state relative-caret-position="134">
+          <caret line="190" column="44" lean-forward="true" selection-start-line="190" selection-start-column="44" selection-end-line="190" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#988#998#0" expanded="true" />
