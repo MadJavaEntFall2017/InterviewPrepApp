@@ -5,10 +5,13 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.mapping.Set;
 
+
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+import java.util.*;
 
 import static java.time.LocalDate.now;
 
@@ -33,14 +36,10 @@ public class Category {
     @Column(name = "categoryId")
     private int categoryID;
 
- //   @ElementCollection(targetClass = Flashcard.class)
-//    private List<Flashcard> flashcards;
 
-/**    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    public List<Flashcard> getFlashcards() {
-        return flashcards;
-    }
-*/
+    @OneToMany(mappedBy = "category")
+    public List<Flashcard> flashcards;
+
 
 
     /**

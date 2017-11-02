@@ -98,37 +98,7 @@ public class GeneralDao {
         return category;
     }
 
-    /**
-     * add a job
-     *
-     * @param job
-     * @return the id of the inserted record
-     */
-/**   public int addJob(Job job) {
-        int id = 0;
-        Transaction transaction = null;
-        Session session = null;
-        try {
-            session = SessionFactoryProvider.getSessionFactory().openSession();
-            transaction = session.beginTransaction();
-            id = (int)session.save(job);
-            transaction.commit();
-        } catch (HibernateException hibernateException1){
-            if (transaction != null) {
-                try {
-                    transaction.rollback();
-                } catch (HibernateException hibernateException2) {
-                    log.error("Error rolling back save of job: " + job, hibernateException2);
-                }
-            }
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return id;
-    }
-*/
+
     public void deleteJob(int id) {
 
         Job job = new Job();
@@ -213,6 +183,38 @@ public class GeneralDao {
             }
         }
     }
+
+    /**
+     * add a job
+     *
+     * @param job
+     * @return the id of the inserted record
+     */
+/**   public int addJob(Job job) {
+ int id = 0;
+ Transaction transaction = null;
+ Session session = null;
+ try {
+ session = SessionFactoryProvider.getSessionFactory().openSession();
+ transaction = session.beginTransaction();
+ id = (int)session.save(job);
+ transaction.commit();
+ } catch (HibernateException hibernateException1){
+ if (transaction != null) {
+ try {
+ transaction.rollback();
+ } catch (HibernateException hibernateException2) {
+ log.error("Error rolling back save of job: " + job, hibernateException2);
+ }
+ }
+ } finally {
+ if (session != null) {
+ session.close();
+ }
+ }
+ return id;
+ }
+ */
 
 
 

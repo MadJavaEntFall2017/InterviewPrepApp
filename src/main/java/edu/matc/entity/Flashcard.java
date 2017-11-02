@@ -15,6 +15,8 @@ import java.util.List;
 
 import static java.time.LocalDate.now;
 
+import java.io.Serializable;
+
 
 /**
  * A class to represent a flashcard.
@@ -40,24 +42,21 @@ public class Flashcard {
     private int flashcardID;
 
 
+
+    @ManyToOne
+    @JoinColumn(name = "categoryId", nullable = false)
     private Category category;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "categoryId")
-    public Category getCategory() {
+
+
+
+
+
+
+
+/**    public Category getCategory() {
         return category;
-    }
+    } */
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-
-/**    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    public Category getCategory() {
-        return category;
-    }
-*/
 
 
 
@@ -81,6 +80,12 @@ public class Flashcard {
         this.answer = answer;
         this.category = category;
 
+    }
+
+    public Category getCategory() {return category;}
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     /**
