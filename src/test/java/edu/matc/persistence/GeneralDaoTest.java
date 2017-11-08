@@ -39,6 +39,15 @@ public class GeneralDaoTest {
     public void getAllCategories() throws Exception {
         List<Category> categories= dao.getAllCategories();
         assertTrue(categories.size() > 0);
+        for (int i = 0; i < categories.size(); i++) {
+            System.out.println(categories.get(i) + ", ");
+        }
+    }
+
+    @Test
+    public void getCategory() throws Exception {
+        Category category = dao.getCategory(1);
+        assertTrue(category.getCategoryID() == 1);
     }
 
     @Test
@@ -65,9 +74,10 @@ public class GeneralDaoTest {
     }
 
     @Test
-    public void getCategory() throws Exception {
-        Category category = dao.getCategory(3);
-        assertTrue(category.getCategoryID() == 3);
+    public void getCategoryOne() throws Exception {
+        Category category = dao.getCategory(1);
+        assertTrue(category.getCategoryID() == 1);
+        System.out.print(category);
     }
 
 /**    @Test
