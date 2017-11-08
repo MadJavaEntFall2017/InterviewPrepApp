@@ -818,7 +818,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510177161211</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;target/classes/edu/matc/entity/Flashcard.class&#10;#&#9;target/classes/hibernate.cfg.xml">
+      <created>1510177190326</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1510177190326</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -854,7 +861,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43364000" />
+    <option name="totallyTimeSpent" value="43392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
