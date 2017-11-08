@@ -55,8 +55,6 @@ public class GeneralDao {
         return flashcards;
     }
 
-
-
     /**
      * retrieve a job given their id
      *
