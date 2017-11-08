@@ -1,11 +1,14 @@
 package edu.matc.persistence;
 
-
+import java.util.Arrays;
 import edu.matc.entity.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+
 import org.junit.Before;
 import org.junit.Test;
+
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -42,6 +45,16 @@ public class GeneralDaoTest {
     public void getAllFlashcards() throws Exception {
         List<Flashcard> flashcards = dao.getAllFlashcards();
         assertTrue(flashcards.size() > 0);
+
+
+        for (int i = 0; i < flashcards.size(); i++) {
+            System.out.println(flashcards.get(i) + ", ");
+        }
+
+        Flashcard test = new Flashcard();
+        System.out.println("To String:" + test.toString());
+
+
     }
 
 
