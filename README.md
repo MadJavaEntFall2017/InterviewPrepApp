@@ -8,6 +8,12 @@ Problem -
 IT students often come to interviews unprepared. This application will help prepare students in the IT field.
 Interview Prep App will...
 
+uri Operations:
+1) Get Job
+2) Get category
+3) Get card...
+
+
 - Provide categorized prep cards for different skillsets
 - 
 
