@@ -19,7 +19,7 @@ public class RestService {
     @GET
     // The Java method will produce content identified by the MIME Media type
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getMessage(@PathParam("category") String category) {
+    public Response getMessage(@PathParam("category") String category,@PathParam("card") String card) {
         if(category.equals("categories")) {
             // Return Flashcards by class
             GeneralDao dao = new GeneralDao();
@@ -42,7 +42,14 @@ public class RestService {
         } else if (category.chars().allMatch(Character::isDigit)){
             GeneralDao dao = new GeneralDao();
             Category cata = dao.getCategory(Integer.parseInt(category) );
+            List<Flashcard> cards = dao.getAllFlashcards();
+
             output += cata;
+            for (Flashcard a : cards) {
+                if (Integer.parseInt(category) == a.getCategory().getCategoryID()) {
+                    output += a.getAnswer();
+                }
+            }
                 } else {
             output = "you entered:" + category +"|"+ "enter jobs, categories, flashCards, or a number";
         }
