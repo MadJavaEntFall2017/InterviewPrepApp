@@ -3,12 +3,12 @@ package edu.matc.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.mapping.Set;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.Period;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static java.time.LocalDate.now;
 
@@ -20,8 +20,8 @@ import static java.time.LocalDate.now;
  */
 
 @Entity
-@Table(name = "jobs")
-public class Job {
+@Table(name = "jobs", catalog = "interviewdb", uniqueConstraints = @UniqueConstraint(columnNames = "jobId"))
+public class Job implements java.io.Serializable{
 
     @Column(name="name")
     private String jobName;
@@ -33,6 +33,13 @@ public class Job {
     @Column(name = "jobId")
     private int jobID;
 
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "jobs_category_lnk", catalog = "interviewdb", joinColumns = {
+            @JoinColumn(name = "jobsId", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "categoryId",
+                    nullable = false, updatable = false) })
+    private List<Category> categories = new ArrayList<>(0);
 
     /**
      * Instantiates a new User.
@@ -81,6 +88,15 @@ public class Job {
      */
     public void setJobID(int jobID) {
         this.jobID = jobID;
+    }
+
+
+    public List<Category> getCategories() {
+        return this.categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     @Override
