@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4110fc8-39b8-40aa-9dcb-f8346a7a3e88" name="Default" comment="">
+    <list default="true" id="b4110fc8-39b8-40aa-9dcb-f8346a7a3e88" name="Default" comment="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -87,8 +87,8 @@
       <file leaf-file-name="Category.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/Category.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state relative-caret-position="-334">
+              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2397#2398#0" expanded="true" />
@@ -567,7 +567,7 @@
       <updated>1510181231164</updated>
       <workItem from="1510181283537" duration="4740000" />
       <workItem from="1510188511052" duration="9114000" />
-      <workItem from="1510197989272" duration="294000" />
+      <workItem from="1510197989272" duration="506000" />
     </task>
     <task id="LOCAL-00003" summary="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1510188526656</created>
@@ -583,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510198268473</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge branch 'master' of https://github.com/MadJavaEntFall2017/InterviewPrepApp&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1510198314774</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1510198314774</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -619,7 +626,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14811000" />
+    <option name="totallyTimeSpent" value="15023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1863" height="1084" extended-state="6" />
@@ -999,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/Category.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="-334">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2397#2398#0" expanded="true" />
