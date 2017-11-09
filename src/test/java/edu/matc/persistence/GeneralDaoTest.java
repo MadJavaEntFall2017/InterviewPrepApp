@@ -91,7 +91,7 @@ public class GeneralDaoTest {
         assertTrue(job.getJobID() == 4);
     }
 */
-
+/**
     @Test
     public void deleteJob() throws Exception {
         Job job = dao.getJob(3);
@@ -100,7 +100,7 @@ public class GeneralDaoTest {
 
         assertFalse(jobs.contains(jobs));
     }
-
+*/
 /**    @Test
     public void deleteCategory() throws Exception {
         Category category = dao.getCategory(6);

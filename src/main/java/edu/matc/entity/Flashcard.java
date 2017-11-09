@@ -26,8 +26,14 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "flashcard")
-public class Flashcard {
+@Table(name = "flashcard", catalog = "interviewdb", uniqueConstraints = @UniqueConstraint(columnNames = "flashcardId"))
+public class Flashcard implements java.io.Serializable{
+
+
+
+
+
+
 
     @Column(name="question")
     private String question;
@@ -43,7 +49,7 @@ public class Flashcard {
 
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoryId", nullable = false)
     private Category category;
 

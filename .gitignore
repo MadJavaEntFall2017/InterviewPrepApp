@@ -35,6 +35,10 @@ fabric.properties
 /src/test/resources/hibernate.cfg.xml
 /src/main/resources/database.properties
 /src/main/resources/hibernate.cfg.xml
+<<<<<<< HEAD
+/.idea/
+=======
 target/
 .idea/
 .idea/workspace.xml
+>>>>>>> a4e21b9c4cbe926824be3ec90c5ea3b4926a3dd5

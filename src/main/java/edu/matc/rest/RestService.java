@@ -19,14 +19,22 @@ public class RestService {
     @GET
     // The Java method will produce content identified by the MIME Media type
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getMessage(@PathParam("category") String category,@PathParam("card") String card) {
+    public Response getMessage(@PathParam("category") String category) {
         if(category.equals("categories")) {
             // Return Flashcards by class
             GeneralDao dao = new GeneralDao();
             List<Category> cata = dao.getAllCategories();
+            output = "{ \"categories\":[";
+            int index = 1;
             for (Category a : cata) {
-                output += a;
+
+                output += "\"" + a.getCategoryName() + "\"";
+                if (cata.size() != index){
+                    output += ",";
+                }
+                index++;
             }
+            output += "]}";
         } else if (category.equals("jobs")){
             GeneralDao dao = new GeneralDao();
             List<Job> jobs = dao.getAllJobs();
@@ -36,19 +44,27 @@ public class RestService {
         } else if (category.equals("flashCards")){
             GeneralDao dao = new GeneralDao();
             List<Flashcard> cards = dao.getAllFlashcards();
+            int index = 1;
+            output = "{ \"flashcards\":[";
             for (Flashcard a : cards) {
-                output += a;
+
+                output += "\"" + a.getAnswer() + "\"";
+                if (cards.size() != index){
+                    output += ",";
+                }
+                index++;
             }
+            output += "]}";
         } else if (category.chars().allMatch(Character::isDigit)){
             GeneralDao dao = new GeneralDao();
             Category cata = dao.getCategory(Integer.parseInt(category) );
-            List<Flashcard> cards = dao.getAllFlashcards();
+            List<Flashcard> cards = cata.getFlashcards();
 
             output += cata;
             for (Flashcard a : cards) {
-                if (Integer.parseInt(category) == a.getCategory().getCategoryID()) {
-                    output += a.getAnswer();
-                }
+
+                   output += a.getCategory();
+
             }
                 } else {
             output = "you entered:" + category +"|"+ "enter jobs, categories, flashCards, or a number";

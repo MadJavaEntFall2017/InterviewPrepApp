@@ -23,8 +23,9 @@ import static java.time.LocalDate.now;
  */
 
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "category", catalog = "interviewdb", uniqueConstraints = @UniqueConstraint(columnNames="categoryId"))
+
+public class Category implements java.io.Serializable{
 
     @Column(name="name")
     private String categoryName;
@@ -37,11 +38,11 @@ public class Category {
     private int categoryID;
 
 
-    @OneToMany(mappedBy = "category")
-    public List<Flashcard> flashcards;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
+    public List<Flashcard> flashcards = new ArrayList<>(0);
 
-
-
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "categories")
+    public List<Job> jobs = new ArrayList<>(0);
     /**
      * Instantiates a new User.
      */
@@ -100,6 +101,19 @@ public class Category {
         this.categoryID = categoryID;
     }
 
+
+    public List<Flashcard> getFlashcards() {
+        return this.flashcards;
+    }
+    public void setFlashcards(List<Flashcard> flashcards) {
+        this.flashcards = flashcards;
+    }
+    public List<Job> getJobs() {
+        return this.jobs;
+    }
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
+    }
     @Override
     public String toString() {
         return "Category{" +
