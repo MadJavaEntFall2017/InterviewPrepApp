@@ -48,6 +48,7 @@ public class GeneralDaoTest {
     public void getCategory() throws Exception {
         Category category = dao.getCategory(1);
         assertTrue(category.getCategoryID() == 1);
+
     }
 
     @Test
@@ -63,7 +64,6 @@ public class GeneralDaoTest {
         Flashcard test = new Flashcard();
         System.out.println("To String:" + test.toString());
 
-
     }
 
 
@@ -75,9 +75,11 @@ public class GeneralDaoTest {
 
     @Test
     public void getCategoryOne() throws Exception {
+
         Category category = dao.getCategory(1);
         assertTrue(category.getCategoryID() == 1);
         System.out.print(category);
+
     }
 
 /**    @Test

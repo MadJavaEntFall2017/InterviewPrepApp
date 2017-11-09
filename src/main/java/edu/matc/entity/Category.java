@@ -54,9 +54,18 @@ public class Category {
      * @param categoryName   name of category
      * @param categoryID    id of category
      */
-    public Category(String categoryName, int categoryID) {
+    public Category(String categoryName, int categoryID, List<Flashcard> flashcards) {
         this.categoryName = categoryName;
         this.categoryID = categoryID;
+        this.flashcards = flashcards;
+    }
+
+    public List<Flashcard> getFlashcards() {
+        return flashcards;
+    }
+
+    public void setFlashcards(List<Flashcard> flashcards) {
+        this.flashcards = flashcards;
     }
 
     /**
