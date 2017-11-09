@@ -1,16 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 11/8/17
-  Time: 7:57 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div id = "categoryNavBar">
+    <ul>
+        <li class = "category">SQL Programming</li>
+        <li class = "category">Database Design</li>
+        <li class = "category">Database Theory</li>
+    </ul>
+</div>

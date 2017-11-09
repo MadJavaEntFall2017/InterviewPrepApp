@@ -9,10 +9,82 @@ body{
 }
 .sidebar {
     grid-area: 2/1/3/2;
+    background-color: ;
+    background-color: rgba(222, 217, 197, 0.6);
+    background-image: linear-gradient( to bottom, rgba(227, 221, 202, 0.6), #ffffff 40% );
 }
 .main {
     grid-area: 2/2/3/3;
+    background-color: ;
+    background-color: rgba(222, 217, 197, 0.6);
+    background-image: linear-gradient( to bottom, rgba(227, 221, 202, 0.6), #ffffff 40% );
 }
 div {
-    border: 2px solid gray;
+
+}
+
+h1 {
+    background-color: rgb(188, 180, 156);
+    border: 5px double black;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: rgb(188, 180, 156);
+    border: 1px solid black;
+    padding: 5px;
+}
+
+li:hover {
+    background-color: white;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+li:active {
+    background-color: white;
+}
+a {
+    color: black;
+}
+
+.category {
+    float:right;
+    background-color: black;
+    color: white;
+    text-align:center;
+    border: 1px solid white;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+#categoryNavBar{
+    margin-right: 30em;
+}
+
+
+#flashcard {
+    background-color: white;
+    width: 50%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 3em;
+    border: 2px solid black;
+    box-shadow: 0 35px 20px #777;
+}
+.main {
+    background-color: lightgrey;
+    width: 85%;
 }
