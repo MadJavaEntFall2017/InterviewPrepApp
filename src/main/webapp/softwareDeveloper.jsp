@@ -5,9 +5,8 @@
     <h1>Interview Prep App</h1>
 
 </div>
-
 <div class="sidebar">
-    <div><h2>Pick a Job</h2></div>
+    <div><h2>Select a Job</h2></div>
     <div>
         <ul>
             <li><a href = "databaseAdmin.jsp">Database Administrator</a></li>
@@ -18,12 +17,22 @@
     </div>
 </div>
 <div class="main">
+
+    <div id = "categoryNavBar">
+        <ul>
+            <li class = "category">Java</li>
+            <li class = "category">Object Oriented Programming</li>
+        </ul>
+    </div>
     <section id = "flashcard">
 
     </section>
 
 </div>
+<div class="title">
+    <h1>Interview Prep App</h1>
 
+</div>
 
 </body>
 </html>
