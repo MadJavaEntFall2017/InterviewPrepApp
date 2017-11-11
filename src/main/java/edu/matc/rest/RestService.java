@@ -92,7 +92,8 @@ public class RestService {
         } else if (category.chars().allMatch(Character::isDigit)) {
             GeneralDao dao = new GeneralDao();
             Category cata = dao.getCategory(Integer.parseInt(category));
-            List<Flashcard> cards = cata.getFlashcards();
+            List<Flashcard> cards;
+            cards = cata.getFlashcards();
 
             output += cata;
             for (Flashcard a : cards) {
