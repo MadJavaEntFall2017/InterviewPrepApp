@@ -102,12 +102,6 @@ public class Category implements java.io.Serializable{
     }
 
 
-    public List<Flashcard> getFlashcards() {
-        return this.flashcards;
-    }
-    public void setFlashcards(List<Flashcard> flashcards) {
-        this.flashcards = flashcards;
-    }
     public List<Job> getJobs() {
         return this.jobs;
     }
