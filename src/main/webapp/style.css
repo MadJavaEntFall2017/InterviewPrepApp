@@ -25,7 +25,7 @@ h1 {
     background-color: rgb(188, 180, 156);
     border: 5px double black;
     text-align: center;
-    width: 80%;
+    width: 99%;
     margin: auto;
 }
 
@@ -33,7 +33,7 @@ ul {
     list-style: none;
 }
 
-li.side {
+li {
     background-color: rgb(188, 180, 156);
     border: 1px solid black;
     padding: 5px;

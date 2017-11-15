@@ -34,8 +34,12 @@ public class RestService {
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry) it.next();
 
-                output += "<li><a href =\"" + pair.getValue()
+                output += "<li><a target = 'categoryLink' href = \"http://localhost:8080/" + pair.getValue()
                         +".jsp \">" + pair.getValue() + "</a></li>";
+
+                //output += "<li><a href = \"http://localhost:8080/>" + pair.getValue() +".jsp\">" + pair.getValue() + "</a></li>";
+
+               // output += "<li><a href = /cards/categories/0/html target = 'catlinks'>" + pair.getValue() + "</a></li>";
 
             }
             output += "</ul></div>";
@@ -59,7 +63,7 @@ public class RestService {
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry) it.next();
 
-                output += "<li class = \"category\"><a href =\"" + pair.getValue()
+                output += "<li class = \"category\"><a target = 'flashcards' href =\"" + pair.getValue()
                         +".jsp \">" + pair.getValue() + "</a></li>";
 
             }
@@ -73,7 +77,7 @@ public class RestService {
             }
             Category list = (Category) sort.get(num);
             List<Flashcard> cards = list.getFlashcards();
-            output = "<div>";
+            output = "<div class = 'flashcard_container'>";
             for (Flashcard a : cards) {
                 output += "<div class=\"flashcard\">";
                 output += "<div class=\"question\">" + a.getQuestion() + "</div>";
