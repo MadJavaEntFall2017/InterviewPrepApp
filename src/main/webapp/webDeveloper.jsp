@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="main">
-
+    GET http://localhost:8080/cards/categories/1/html
     <div id = "categoryNavBar">
         <ul>
             <li class = "category">CSS</li>
