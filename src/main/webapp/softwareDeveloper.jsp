@@ -9,9 +9,9 @@
     <div><h2>Select a Job</h2></div>
     <div>
         <ul>
-            <li><a href = "databaseAdmin.jsp">Database Administrator</a></li>
-            <li><a href="webDeveloper.jsp">Web Developer</a></li>
-            <li><a href="softwareDeveloper.jsp">Software Developer</a></li>
+            <li class = "side"><a href = "databaseAdmin.jsp">Database Administrator</a></li>
+            <li class = "side"><a href="webDeveloper.jsp">Web Developer</a></li>
+            <li class = "side"><a href="softwareDeveloper.jsp">Software Developer</a></li>
         </ul>
 
     </div>
@@ -21,12 +21,16 @@
     <div id = "categoryNavBar">
         <ul>
             <li class = "category">Java</li>
-            <li class = "category">Object Oriented Programming</li>
+            <li class = "category">Object Oriented Programming | </li>
         </ul>
     </div>
-    <section id = "flashcard">
-
-    </section>
+    <label>
+        <input type="checkbox"  />
+        <div class="card">
+            <div class="front">Front</div>
+            <div class="back">Back</div>
+        </div>
+    </label>
 
 </div>
 <div class="title">

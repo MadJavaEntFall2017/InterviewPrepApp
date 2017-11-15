@@ -26,10 +26,13 @@
             <li class = "category">Database Theory</li>
         </ul>
     </div>
-    <section id = "flashcard">
-
-    </section>
-
+    <label>
+        <input type="checkbox"  />
+        <div class="card">
+            <div class="front">Front</div>
+            <div class="back">Back</div>
+        </div>
+    </label>
 </div>
 
 

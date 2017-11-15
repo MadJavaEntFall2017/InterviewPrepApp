@@ -18,9 +18,9 @@
     </div>
 </div>
 <div class="main">
-    <section id = "flashcard">
+<!--    <section id = "flashcard">
 
-    </section>
+    </section> -->
 
 </div>
 
