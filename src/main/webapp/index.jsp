@@ -8,6 +8,7 @@
 
 <div class="sidebar">
     <div><h2>Pick a Job</h2></div>
+    GET http://localhost:8080/cards/job/html
     <div>
         <ul>
             <li><a href = "databaseAdmin.jsp">Database Administrator</a></li>

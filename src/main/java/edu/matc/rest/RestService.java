@@ -8,27 +8,99 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import edu.matc.persistence.GeneralDao;
 import edu.matc.entity.*;
-
 import java.util.*;
-
 
 @Path("/{category}")
 
 public class RestService {
     private String output;
+    // The Java method will process HTTP GET requests
+    @GET
+    // The Java method will produce content identified by the MIME Media type
+    @Path("/html")
+    @Produces(MediaType.TEXT_HTML)
+    //This creates category buttons.
+    public Response getJobHtmlMessage(@PathParam("category") String category) {
+        if (category.equals("job")) {
+            output = "<div><ul>";
+            GeneralDao dao = new GeneralDao();
+            List<Job> theJob = dao.getAllJobs();
+            Map sort = new HashMap<>();
+            for (Job a : theJob) {
+                sort.put(a.getJobID(), a.getJobName());
+            }
+
+            Iterator it = sort.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry) it.next();
+
+                output += "<li><a href =\"" + pair.getValue()
+                        +".jsp \">" + pair.getValue() + "</a></li>";
+
+            }
+            output += "</ul></div>";
+        }
+
+        return Response.status(200).entity(output).build();
+    }
+    // The Java method will process HTTP GET requests
+    @GET
+    // The Java method will produce content identified by the MIME Media type
+    @Path("/{number}/html")
+    @Produces(MediaType.TEXT_HTML)
+    //This creates categories buttons or flashcard divs.
+    public Response getHtmlMessage(@PathParam("number") int num ,@PathParam("category") String category) {
+        if (category.equals("categories")) {
+            output = "<div id = \"categoryNavBar\"><ul>";
+            GeneralDao dao = new GeneralDao();
+            Job theJob = dao.getAllJobs().get(num);
+            Map sort = createCategoryMap(new HashSet(theJob.getCategories()));
+            Iterator it = sort.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry) it.next();
+
+                output += "<li class = \"category\"><a href =\"" + pair.getValue()
+                        +".jsp \">" + pair.getValue() + "</a></li>";
+
+            }
+            output += "</ul></div>";
+        } else if (category.equals("flashcards")) {
+            GeneralDao dao = new GeneralDao();
+            List<Category> cata = dao.getAllCategories();
+            Map sort = new HashMap();
+            for (Category a : cata) {
+                sort.put(a.getCategoryID(), a);
+            }
+            Category list = (Category) sort.get(num);
+            List<Flashcard> cards = list.getFlashcards();
+            output = "<div>";
+            for (Flashcard a : cards) {
+                output += "<div class=\"flashcard\">";
+                output += "<div class=\"question\">" + a.getQuestion() + "</div>";
+                output += "<div class=\"answer\">" + a.getAnswer() + "</div>";
+                output += "</div>";
+            }
+            output += "</div>";
+        }
+
+        return Response.status(200).entity(output).build();
+    }
+
+
 
     // The Java method will process HTTP GET requests
     @GET
     // The Java method will produce content identified by the MIME Media type
+    @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
+    //creates the json output based on if jobs, categories, or flashcards is entered.
     public Response getMessage(@PathParam("category") String category) {
         if (category.equals("categories")) {
-            // Return Flashcards by class
+            // Return categories json
             GeneralDao dao = new GeneralDao();
             Set<Category> cata = new HashSet(dao.getAllCategories());
             output = "{ \"categories\":[";
             int index = 1;
-
             Map sort = createCategoryMap(cata);
             Iterator it = sort.entrySet().iterator();
             while (it.hasNext()) {
@@ -74,15 +146,17 @@ public class RestService {
                 jobIndex++;
             }
             output += "]}";
-
-        } else if (category.equals("flashCards")) {
+            // Return Flashcards json
+        } else if (category.equals("flashcards")) {
             GeneralDao dao = new GeneralDao();
             List<Flashcard> cards = dao.getAllFlashcards();
             int index = 1;
             output = "{ \"flashcards\":[";
             for (Flashcard a : cards) {
+                output += "{\"Category\":\"" + a.getCategory().getCategoryName() + "\",";
+                output += "\"Question\":\"" + a.getQuestion() + "\",";
+                output += "\"Answer\":\"" + a.getAnswer() + "\"}";
 
-                output += "\"" + a.getAnswer() + "\"";
                 if (cards.size() != index) {
                     output += ",";
                 }
@@ -101,8 +175,6 @@ public class RestService {
                 output += a.getCategory();
 
             }
-        } else {
-            output = "you entered:" + category + "|" + "enter jobs, categories, flashCards, or a number";
         }
 
         return Response.status(200).entity(output).build();

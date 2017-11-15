@@ -9,19 +9,19 @@
     <div><h2>Select a Job</h2></div>
     <div>
         <ul>
-            <li class = "side"><a href = "databaseAdmin.jsp">Database Administrator</a></li>
-            <li class = "side"><a href="webDeveloper.jsp">Web Developer</a></li>
-            <li class = "side"><a href="softwareDeveloper.jsp">Software Developer</a></li>
+            <li><a href ="databaseAdmin.jsp">Database Administrator</a></li>
+            <li><a href="webDeveloper.jsp">Web Developer</a></li>
+            <li><a href="softwareDeveloper.jsp">Software Developer</a></li>
         </ul>
 
     </div>
 </div>
 <div class="main">
-    GET http://localhost:8080/cards/categories/1/html
+GET http://localhost:8080/cards/categories/0/html
     <div id = "categoryNavBar">
         <ul>
-            <li class = "category">CSS</li>
-            <li class = "category">HTTP | </li>
+            <li class = "category">SQL Programming</li>
+            <li class = "category">Database Design</li>
         </ul>
     </div>
     <label>
@@ -37,6 +37,5 @@
 
 </body>
 </html>
-
 
 
