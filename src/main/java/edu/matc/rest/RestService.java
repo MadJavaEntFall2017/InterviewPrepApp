@@ -63,8 +63,8 @@ public class RestService {
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry) it.next();
 
-                output += "<li class = \"category\"><a target = 'flashcards' href =\"" + pair.getValue()
-                        +".jsp \">" + pair.getValue() + "</a></li>";
+                output += "<li class = \"category\"><a target= 'flashcard' href =\"http://localhost:8080/cards/flashcards/" + pair.getKey()
+                        +"/html \">" + pair.getValue() + "</a></li>";
 
             }
             output += "</ul></div>";
@@ -80,8 +80,8 @@ public class RestService {
             output = "<div class = 'flashcard_container'>";
             for (Flashcard a : cards) {
                 output += "<div class=\"flashcard\">";
-                output += "<div class=\"question\">" + a.getQuestion() + "</div>";
-                output += "<div class=\"answer\">" + a.getAnswer() + "</div>";
+                output += "<div class=\"question\">" + "Question: " + a.getQuestion() + "</div><br>";
+                output += "<div class=\"answer\">" + "Answer: " + a.getAnswer() + "</div>";
                 output += "</div>";
             }
             output += "</div>";
