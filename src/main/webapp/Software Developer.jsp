@@ -26,8 +26,8 @@
     <label>
         <input type="checkbox"  />
         <div class="card">
-            <div class="front">Front</div>
-            <div class="back">Back</div>
+            <div class="front"><iframe name = "flashcard" width = "250" height = "250"></iframe></div>
+            <div class="back"><iframe name = "flashcard" width = "250" height = "250"></iframe></div>
         </div>
     </label>
 
